@@ -81,241 +81,239 @@
 //    }
 //    println!();
 
-    // let mut a: [i8; 10] = [42; 10];
+// let mut a: [i8; 10] = [42; 10];
 
-    // a[5] = 0;
+// a[5] = 0;
 
-    // println!("a : {:?}", a);
+// println!("a : {:?}", a);
 
-    // let t: (i8, bool) = (7, true);
+// let t: (i8, bool) = (7, true);
 
-    // println!("1st index: {}",t.0);
-    // println!("2nd index: {}",t.1);
+// println!("1st index: {}",t.0);
+// println!("2nd index: {}",t.1);
 
-    // let mut x: i32 = 10;
-    // let ref_x: &mut i32 = &mut x;
+// let mut x: i32 = 10;
+// let ref_x: &mut i32 = &mut x;
 
-    // *ref_x = 20;
+// *ref_x = 20;
 
-    // println!("x : {x}");
+// println!("x : {x}");
 
+// 이렇게 하면 안된다. dangling references를 정적으로 금지한다.
+// let ref_x: &i32;
+// {
+//     let x:i32 = 10;
+//     ref_x = &x;
+// }
 
-    // 이렇게 하면 안된다. dangling references를 정적으로 금지한다.
-    // let ref_x: &i32;
-    // {
-    //     let x:i32 = 10;
-    //     ref_x = &x;
-    // }
+// println!("ref_x : {ref_x}");
 
-    // println!("ref_x : {ref_x}");
+// let mut a: [i32; 6] = [10, 20, 30, 40, 50, 60];
+// println!("a: {a:?}");
 
-    // let mut a: [i32; 6] = [10, 20, 30, 40, 50, 60];
-    // println!("a: {a:?}");
+// a[3] = 234;
 
-    // a[3] = 234;
+// let s: &[i32] = &a[2..4];
 
-    // let s: &[i32] = &a[2..4];
+// println!("s: {s:?}");
 
-    // println!("s: {s:?}");
+// let s1: &str = "Hello";
 
-    // let s1: &str = "Hello";
+// println!("s1: {s1}");
 
-    // println!("s1: {s1}");
+// let mut s2: String = String::from("Hello ");
+// println!("s2: {s2}");
+// s2.push_str(s1);
+// println!("s2: {s2}");
 
-    // let mut s2: String = String::from("Hello ");
-    // println!("s2: {s2}");
-    // s2.push_str(s1);
-    // println!("s2: {s2}");
+// fizzbuzz_to(20);
 
-    // fizzbuzz_to(20);
-    
-    // let x: i8 = 15;
-    // let y: i16 = 1000;
+// let x: i8 = 15;
+// let y: i16 = 1000;
 
-    // println!("{x} * {y} = {}", multiply(x.into(), y.into()));
+// println!("{x} * {y} = {}", multiply(x.into(), y.into()));
 
-    // let array = [10, 20, 30];
+// let array = [10, 20, 30];
 
-    // for n in array {
-    //     print!(" {n}");
-    // }
-    // println!();
+// for n in array {
+//     print!(" {n}");
+// }
+// println!();
 
-    // print!("Iterating over range:");
-    // for i in 0..3 {
-    //     print!(" {}", array[i]);
-    // }
+// print!("Iterating over range:");
+// for i in 0..3 {
+//     print!(" {}", array[i]);
+// }
 
-    // let matrix = [
-    //     [101, 102, 103],
-    //     [201, 202, 106],
-    //     [301, 302, 303],
-    // ];
+// let matrix = [
+//     [101, 102, 103],
+//     [201, 202, 106],
+//     [301, 302, 303],
+// ];
 
-    // println!("matrix:");
-    // pretty_print(&matrix);
+// println!("matrix:");
+// pretty_print(&matrix);
 
-    // let transmatrix = transpose(matrix);
-    // pretty_print(&transmatrix);
+// let transmatrix = transpose(matrix);
+// pretty_print(&transmatrix);
 
-    // let x: i32 = 10;
-    // println!("x: {x}");
+// let x: i32 = 10;
+// println!("x: {x}");
 
-    // let x = 10;
-    // let y = 20;
+// let x = 10;
+// let y = 20;
 
-    // takes_u32(x);
-    // takes_i8(y);
+// takes_u32(x);
+// takes_i8(y);
 
-    // let digest = compute_digest("Hello");
-    // println!("Digest : {digest:?}");
+// let digest = compute_digest("Hello");
+// println!("Digest : {digest:?}");
 
-    // println!("{BANNER}");
+// println!("{BANNER}");
 
-    // let a = 10;
-    // println!("before : {a}");
+// let a = 10;
+// println!("before : {a}");
 
-    // {
-    //     let a: &str = "Hello";
-    //     println!("inner scope : {a}");
+// {
+//     let a: &str = "Hello";
+//     println!("inner scope : {a}");
 
-    //     let a = true;
-    //     println!("shadowed in inner scope: {a}");
-    // }
-    // println!("after: {a}");
+//     let a = true;
+//     println!("shadowed in inner scope: {a}");
+// }
+// println!("after: {a}");
 
-    // let s1 = String::from("Hello");
+// let s1 = String::from("Hello");
 
-    // {
-    //     let p = Point(3,4);
-    //     println!("x : {}", p.0);
-    // }
-    // println!("y: {}", p.1);
+// {
+//     let p = Point(3,4);
+//     println!("x : {}", p.0);
+// }
+// println!("y: {}", p.1);
 
-    // let s1: String = String::from("Hello");
+// let s1: String = String::from("Hello");
 
-    // let s2: String = s1;
+// let s2: String = s1;
 
-    // println!("s2 : {s2}");
-    // println!("s1 : {s1}");
+// println!("s2 : {s2}");
+// println!("s1 : {s1}");
 
-    // let s1: String = String::from("Rust");
-    // let s2: String = s1;
+// let s1: String = String::from("Rust");
+// let s2: String = s1;
 
-    // let name = String::from("Alice");
-    // say_hello(name);
+// let name = String::from("Alice");
+// say_hello(name);
 
-    // let x = 42;
-    // let y = x;
+// let x = 42;
+// let y = x;
 
-    // println!("x : {x}");
-    // println!("y : {y}");
+// println!("x : {x}");
+// println!("y : {y}");
 
-    // let p1 = Point(3, 4);
-    // let p2 = p1;
+// let p1 = Point(3, 4);
+// let p2 = p1;
 
-    // println!("p1 : {p1:?}");
-    // println!("p2 : {p2:?}");
+// println!("p1 : {p1:?}");
+// println!("p2 : {p2:?}");
 
-    // let p1 = Point(3, 4);
-    // let p2 = Point(10, 20);
-    // let p3 = add(&p1, &p2);
+// let p1 = Point(3, 4);
+// let p2 = Point(10, 20);
+// let p3 = add(&p1, &p2);
 
-    // println!("{p1:?} + {p2:?} = {p3:?}");
+// println!("{p1:?} + {p2:?} = {p3:?}");
 
-    // let mut a: i32 = 10;
+// let mut a: i32 = 10;
 
-    // let b: &i32 = &a;
+// let b: &i32 = &a;
 
-    // {
-    //     let c: &mut i32 = &mut a;
-    //     *c = 20;
-    // }
+// {
+//     let c: &mut i32 = &mut a;
+//     *c = 20;
+// }
 
-    // println!("a : {a}");
-    // println!("b : {b}");
+// println!("a : {a}");
+// println!("b : {b}");
 
-    // let p1: Point = Point(10, 20);
-    // let p2: Point = Point(20, 20);
-    // let p3: &Point = left_most(&p1, &p2);
+// let p1: Point = Point(10, 20);
+// let p2: Point = Point(20, 20);
+// let p3: &Point = left_most(&p1, &p2);
 
-    // println!("left-most point {:?}", p3);
+// println!("left-most point {:?}", p3);
 
-    // let text = String::from("The quick bromn fox jumps over ther lazy dog.");
-    // let fox = Highlight(&text[4..19]);
-    // let dog = Highlight(&text[35..43]);
+// let text = String::from("The quick bromn fox jumps over ther lazy dog.");
+// let fox = Highlight(&text[4..19]);
+// let dog = Highlight(&text[35..43]);
 
-    // erase(text);
+// erase(text);
 
-    // println!("{fox:?}");
-    // println!("{dog:?}");
+// println!("{fox:?}");
+// println!("{dog:?}");
 
-    // let mut vec = vec![10, 20];
-    // vec.push(30);
+// let mut vec = vec![10, 20];
+// vec.push(30);
 
-    // println!("middle value: {}", vec[vec.len() / 2]);
+// println!("middle value: {}", vec[vec.len() / 2]);
 
-    // for item in vec.iter() {
-    //     println!("item: {item}");
-    // }
+// for item in vec.iter() {
+//     println!("item: {item}");
+// }
 
-    // This shows the desired behavior. Uncomment the code below and
-    // implement the missing methods. You will need to update the
-    // method signatures, including the "self" parameter!
-    // let mut library = Libray::new();
+// This shows the desired behavior. Uncomment the code below and
+// implement the missing methods. You will need to update the
+// method signatures, including the "self" parameter!
+// let mut library = Libray::new();
 
-    // println!("Our library is empty: {}", library.is_empty());
-    
-    // library.add_book(Book::new("Lord of the Rings", 1954));
-    // library.add_book(Book::new("Alice's Adventures in Wonderland", 1865));
-    
-    // library.print_book();
-    
-    // match library.oldest_book() {
-    //    Some(book) => println!("My oldest book is {book}"),
-    //    None => println!("My library is empty!"),
-    // }
-    
-    // println!("Our library has {} books", library.len());
+// println!("Our library is empty: {}", library.is_empty());
 
-    // let v: Vec<i8> = vec![10,20,30];
-    // let mut iter = v.iter();
+// library.add_book(Book::new("Lord of the Rings", 1954));
+// library.add_book(Book::new("Alice's Adventures in Wonderland", 1865));
 
-    // println!("v[0]: {:?}", iter.next());
-    // println!("v[1]: {:?}", iter.next());
-    // println!("v[2]: {:?}", iter.next());
-    // println!("No more items: {:?}", iter.next());
+// library.print_book();
 
-    // let v: Vec<i8> = vec![10,20,30];
-    // let mut iter = v.iter();
+// match library.oldest_book() {
+//    Some(book) => println!("My oldest book is {book}"),
+//    None => println!("My library is empty!"),
+// }
 
-    // let v0 = iter.next();
-    // println!("v0: {v0:?}");
+// println!("Our library has {} books", library.len());
 
-    // let v: Vec<String> = vec![String::from("foo"), String::from("bar")];
-    // let mut iter = v.into_iter();
+// let v: Vec<i8> = vec![10,20,30];
+// let mut iter = v.iter();
 
-    // let v0 = iter.next();
-    // println!("v0: {v0:?}");
+// println!("v[0]: {:?}", iter.next());
+// println!("v[1]: {:?}", iter.next());
+// println!("v[2]: {:?}", iter.next());
+// println!("No more items: {:?}", iter.next());
 
-    // let v: Vec<String> = vec![String::from("foo"), String::from("bar")];
+// let v: Vec<i8> = vec![10,20,30];
+// let mut iter = v.iter();
 
-    // for word in &v {
-    //     println!("word: {word}");
-    // }
+// let v0 = iter.next();
+// println!("v0: {v0:?}");
 
-    // for word in v {
-    //     println!("word: {word}");
-    // }
+// let v: Vec<String> = vec![String::from("foo"), String::from("bar")];
+// let mut iter = v.into_iter();
 
-    // for word in v.iter() {
-    //     println!("word : {word}");
-    // }
+// let v0 = iter.next();
+// println!("v0: {v0:?}");
 
-    // for word in v.into_iter() {
-    //     println!("word : {word}");
-    // }
+// let v: Vec<String> = vec![String::from("foo"), String::from("bar")];
 
+// for word in &v {
+//     println!("word: {word}");
+// }
+
+// for word in v {
+//     println!("word: {word}");
+// }
+
+// for word in v.iter() {
+//     println!("word : {word}");
+// }
+
+// for word in v.into_iter() {
+//     println!("word : {word}");
+// }
 
 // }
 
@@ -474,7 +472,6 @@
 //     }
 // }
 
-
 // #[derive(Debug)]
 // struct Race {
 //     name: String,
@@ -482,7 +479,7 @@
 // }
 
 // impl Race {
-//     // static method가 된단다 
+//     // static method가 된단다
 //     fn new(name: &str) -> Race {
 //         Race { name: String::from(name), laps: Vec::new() }
 //     }
@@ -596,8 +593,6 @@
 //     }
 // }
 
-
-
 // pub struct Cricle {
 //     point : Point,
 //     y: i32,
@@ -606,7 +601,7 @@
 // impl Cricle {
 //     fn new(point:Point, y:i32) -> Cricle {
 //         Cricle { point, y }
-//     } 
+//     }
 // }
 
 // pub enum Shape{
@@ -628,7 +623,7 @@
 
 // impl Shape {
 //     fn circumference(&self) -> f64 {
-        
+
 //     }
 
 //     fn round_two_digits(x: f64) -> f64 {
@@ -734,270 +729,270 @@
 
 // #[rustfmt::skip]
 // fn main() {
-    // let peter = Person {
-    //     name: String::from("Peter"),
-    //     age: 27,
-    // };
+// let peter = Person {
+//     name: String::from("Peter"),
+//     age: 27,
+// };
 
-    // println!("{} is {} years old", peter.name, peter.age);
+// println!("{} is {} years old", peter.name, peter.age);
 
-    // let p = Point(17, 23);
+// let p = Point(17, 23);
 
-    // println!("({}, {})", p.0, p.1);
+// println!("({}, {})", p.0, p.1);
 
-    // let force = compute_thruster_force();
-    // set_thruster_force(force);
+// let force = compute_thruster_force();
+// set_thruster_force(force);
 
-    // let peter = Person::new(String::from("Peter"),27);
-    // println!("{peter:?}");
+// let peter = Person::new(String::from("Peter"),27);
+// println!("{peter:?}");
 
-    // println!("You got: {:?}",file_coin());
+// println!("You got: {:?}",file_coin());
 
-    // let load = WebEvent::PageLoad;
-    // let press = WebEvent::KeyPress('x');
-    // let click = WebEvent::Click { x: 20, y: 80 };
+// let load = WebEvent::PageLoad;
+// let press = WebEvent::KeyPress('x');
+// let click = WebEvent::Click { x: 20, y: 80 };
 
-    // inspect(load);
-    // inspect(press);
-    // inspect(click);
-
-    // dbg_size!(Foo);
+// inspect(load);
+// inspect(press);
+// inspect(click);
+
+// dbg_size!(Foo);
 
-    // let peter = Person {
-    //     name: String::from("Peter"),
-    //     age: 27,
-    // };
-    // peter.say_hello();
-
-    // let mut race = Race::new("Monaco Grand Prix");
-
-    // race.add_lap(70);
-    // race.add_lap(68);
-    // race.print_laps();
-    // race.add_lap(71);
-    // race.print_laps();
-    // race.finsh();
-
-    // let input = 'x';
-
-    // match input {
-    //     'q' => println!("Quitting"),
-    //     'a' | 's' | 'w' | 'd' => println!("Moving around"),
-    //     '0'..='9' => println!("Number input"),
-    //     _ => println!("Something else"),
-    // }
+// let peter = Person {
+//     name: String::from("Peter"),
+//     age: 27,
+// };
+// peter.say_hello();
+
+// let mut race = Race::new("Monaco Grand Prix");
+
+// race.add_lap(70);
+// race.add_lap(68);
+// race.print_laps();
+// race.add_lap(71);
+// race.print_laps();
+// race.finsh();
+
+// let input = 'x';
+
+// match input {
+//     'q' => println!("Quitting"),
+//     'a' | 's' | 'w' | 'd' => println!("Moving around"),
+//     '0'..='9' => println!("Number input"),
+//     _ => println!("Something else"),
+// }
 
-    // let n = 67;
+// let n = 67;
 
-    // match divide_in_two(n) {
-    //     Result::Ok(half) => println!("{n} divided in two is {half}"),
-    //     Result::Err(msg) => println!("sorry, an error happened: {msg}"),
-    // }
-
-    // let foo = Foo {x : (3, 5), y: 123};
-
-    // match foo {
-    //     Foo {x: (1, b), y} => println!("x.0 = 1, b = {b}, y = {y}"),
-    //     Foo {y : 2, x: i} => println!("y = 2, i = {i:?}"),
-    //     Foo {y, ..} => println!("y = {y}, other fields were ignored"),
-    // }
-
-    // let triple = [5, -2, 3];
-
-    // println!("Tell me about {triple:?}");
-
-    // match triple {
-    //     [0, y, z] => println!("First is 0, y = {y} z = {z}"),
-    //     [1, ..] => println!("x = 1, other is ignored"),
-    //     _ => println!("All elements were ignored"),
-    // }
-
-    // let pair = (2, 4);
-
-    // println!("Tell me about {pair:?}");
-
-    // match pair {
-    //     (x, y) if x == y => println!("These are twins"),
-    //     (x, y) if x + y == 0 => println!("Antimatter, kaboom!"),
-    //     (x, _) if x % 2 == 1 => println!("The first one is odd"),
-    //     _ => println!("No correlations"),
-    // }
-
-    // let bob = User::new(String::from("Bob"),32, 155.2);
-
-    // println!("I'm {} and my age is {}", bob.name, bob.age);
-
-    // let x = {
-    //     let y = 10;
-    //     println!("y : {y}");
-
-    //     let z = {
-    //         let w = {
-    //             3 + 4
-    //         };
-    //         println!("w : {w}");
-    //         y * w
-    //     };
-    //     println!("z: {z}");
-    //     z - y
-    // };
-    // println!("x: {x}");
-
-    // println!("doubled: {}", double(7));
-
-    // let mut x = 10;
-    // if x % 2 == 0 {
-    //     x = x / 2;
-    // }
-    // else {
-    //     x = 3 * x + 1;
-    // }
-
-    // let arg = std::env::args().next();
-    // if let Some(value) = arg {
-    //     println!("Program name : {value}");
-    // }
-    // else {
-    //     println!("Missing name?");
-    // }
-
-    // let mut x = 10;
-
-    // while x != 1 {
-    //     x = if x % 2 == 0 {
-    //         x / 2
-    //     }
-    //     else {
-    //         3 * x + 1
-    //     };
-    // }
-    // println!("Final x: {x}");
-
-    // let v = vec![10, 20, 30];
-    // let mut iter = v.into_iter();
-
-    // while let Some(x) = iter.next() {
-    //     println!("x : {x}");
-    // }
-
-    // let v = vec![10, 20, 30];
-
-    // for x in v {
-    //     println!("x: {x}");
-    // }
-
-    // let mut x = 10;
-
-    // loop {
-    //     x = if x % 2 == 0 {
-    //         x / 2
-    //     }
-    //     else {
-    //         3 * x + 1
-    //     };
-    //     if x == 1 {
-    //         break;
-    //     }
-    // }
+// match divide_in_two(n) {
+//     Result::Ok(half) => println!("{n} divided in two is {half}"),
+//     Result::Err(msg) => println!("sorry, an error happened: {msg}"),
+// }
+
+// let foo = Foo {x : (3, 5), y: 123};
+
+// match foo {
+//     Foo {x: (1, b), y} => println!("x.0 = 1, b = {b}, y = {y}"),
+//     Foo {y : 2, x: i} => println!("y = 2, i = {i:?}"),
+//     Foo {y, ..} => println!("y = {y}, other fields were ignored"),
+// }
+
+// let triple = [5, -2, 3];
+
+// println!("Tell me about {triple:?}");
+
+// match triple {
+//     [0, y, z] => println!("First is 0, y = {y} z = {z}"),
+//     [1, ..] => println!("x = 1, other is ignored"),
+//     _ => println!("All elements were ignored"),
+// }
+
+// let pair = (2, 4);
+
+// println!("Tell me about {pair:?}");
+
+// match pair {
+//     (x, y) if x == y => println!("These are twins"),
+//     (x, y) if x + y == 0 => println!("Antimatter, kaboom!"),
+//     (x, _) if x % 2 == 1 => println!("The first one is odd"),
+//     _ => println!("No correlations"),
+// }
+
+// let bob = User::new(String::from("Bob"),32, 155.2);
+
+// println!("I'm {} and my age is {}", bob.name, bob.age);
+
+// let x = {
+//     let y = 10;
+//     println!("y : {y}");
+
+//     let z = {
+//         let w = {
+//             3 + 4
+//         };
+//         println!("w : {w}");
+//         y * w
+//     };
+//     println!("z: {z}");
+//     z - y
+// };
+// println!("x: {x}");
+
+// println!("doubled: {}", double(7));
+
+// let mut x = 10;
+// if x % 2 == 0 {
+//     x = x / 2;
+// }
+// else {
+//     x = 3 * x + 1;
+// }
+
+// let arg = std::env::args().next();
+// if let Some(value) = arg {
+//     println!("Program name : {value}");
+// }
+// else {
+//     println!("Missing name?");
+// }
+
+// let mut x = 10;
+
+// while x != 1 {
+//     x = if x % 2 == 0 {
+//         x / 2
+//     }
+//     else {
+//         3 * x + 1
+//     };
+// }
+// println!("Final x: {x}");
+
+// let v = vec![10, 20, 30];
+// let mut iter = v.into_iter();
+
+// while let Some(x) = iter.next() {
+//     println!("x : {x}");
+// }
+
+// let v = vec![10, 20, 30];
+
+// for x in v {
+//     println!("x: {x}");
+// }
+
+// let mut x = 10;
+
+// loop {
+//     x = if x % 2 == 0 {
+//         x / 2
+//     }
+//     else {
+//         3 * x + 1
+//     };
+//     if x == 1 {
+//         break;
+//     }
+// }
 
-    // println!("Final x : {x}");
+// println!("Final x : {x}");
 
-    // match std::env::args().next().as_deref() {
-    //     Some("cat") => println!("Will do cat things"),
-    //     Some("ls") => println!("Will ls some files"),
-    //     Some("mv") => println!("Let's mov some files"),
-    //     Some("rm") => println!("Uh, dangerous!"),
-    //     None => println!("Hmm,no program name?"),
-    //     _ => println!("Unknown program name!"),
-    // }
+// match std::env::args().next().as_deref() {
+//     Some("cat") => println!("Will do cat things"),
+//     Some("ls") => println!("Will ls some files"),
+//     Some("mv") => println!("Let's mov some files"),
+//     Some("rm") => println!("Uh, dangerous!"),
+//     None => println!("Hmm,no program name?"),
+//     _ => println!("Unknown program name!"),
+// }
 
-    // let v = vec![10, 20, 30];
+// let v = vec![10, 20, 30];
 
-    // let mut iter = v.into_iter();
+// let mut iter = v.into_iter();
 
-    // 'outer: while let Some(x) = iter.next() {
-    //     println!("x: {x}");
+// 'outer: while let Some(x) = iter.next() {
+//     println!("x: {x}");
 
-    //     let mut i = 0;
+//     let mut i = 0;
 
-    //     while i > x {
-    //         println!("x: {x}, i: {i}");
-    //         i += 1;
-    //         if i == 3 {
-    //             break 'outer;
-    //         }
-    //     }
-    // }
+//     while i > x {
+//         println!("x: {x}, i: {i}");
+//         i += 1;
+//         if i == 3 {
+//             break 'outer;
+//         }
+//     }
+// }
 
-    // let mut s1 = String::new();
+// let mut s1 = String::new();
 
-    // s1.push_str("Hello");
+// s1.push_str("Hello");
 
-    // println!("s1: len = {}, capacity = {}",s1.len(), s1.capacity());
+// println!("s1: len = {}, capacity = {}",s1.len(), s1.capacity());
 
-    // let mut s2 = String::with_capacity(s1.len() + 1);
-    // s2.push_str(&s1);
-    // s2.push('!');
+// let mut s2 = String::with_capacity(s1.len() + 1);
+// s2.push_str(&s1);
+// s2.push('!');
 
-    // println!("s2: len = {},capaity = {}",s2.len(), s2.capacity());
+// println!("s2: len = {},capaity = {}",s2.len(), s2.capacity());
 
-    // let numbers = vec![10, 20, 30];
+// let numbers = vec![10, 20, 30];
 
-    // let first: Option<&i8> = numbers.first();
+// let first: Option<&i8> = numbers.first();
 
-    // println!("first: {first:?}");
+// println!("first: {first:?}");
 
-    // let idx: Result<usize, usize> = numbers.binary_search(&10);
-    // println!("idx: {idx:?}");
+// let idx: Result<usize, usize> = numbers.binary_search(&10);
+// println!("idx: {idx:?}");
 
-    // let mut numbers = Vec::new();
-    // numbers.push(42);
+// let mut numbers = Vec::new();
+// numbers.push(42);
 
-    // let mut v1 = Vec::new();
-    // v1.push(42);
-    // println!("v1: len = {}, capacity = {}", v1.len(), v1.capacity());
+// let mut v1 = Vec::new();
+// v1.push(42);
+// println!("v1: len = {}, capacity = {}", v1.len(), v1.capacity());
 
-    // let mut v2 = Vec::with_capacity(v1.len() + 1);
-    // v2.extend(v1.iter());
-    // v2.push(9999);
-    // println!("v2: len = {}, capacity = {}", v2.len(), v2.capacity());
+// let mut v2 = Vec::with_capacity(v1.len() + 1);
+// v2.extend(v1.iter());
+// v2.push(9999);
+// println!("v2: len = {}, capacity = {}", v2.len(), v2.capacity());
 
-    // let mut page_count = HashMap::new();
+// let mut page_count = HashMap::new();
 
-    // page_count.insert("Adventures of Huckleberry Finn".to_string(), 207);
-    // page_count.insert("Grimms' Fairy Tales".to_string(), 751);
-    // page_count.insert("Pride and Prejudice".to_string(), 303);
+// page_count.insert("Adventures of Huckleberry Finn".to_string(), 207);
+// page_count.insert("Grimms' Fairy Tales".to_string(), 751);
+// page_count.insert("Pride and Prejudice".to_string(), 303);
 
-    // if !page_count.contains_key("Les Miserables") {
-    //     println!("We've know about {} books, but not Les Miserables", 
-    //             page_count.len());
-    // }
+// if !page_count.contains_key("Les Miserables") {
+//     println!("We've know about {} books, but not Les Miserables",
+//             page_count.len());
+// }
 
-    // for book in ["Pride and Prejudice", "Alice's Adventure in Wonderland"] {
-    //     match page_count.get(book) {
-    //         Some(cnt) => println!("{book} : {cnt} pages"),
-    //         None => println!("{book} is unknown"),
-    //     }
-    // }
+// for book in ["Pride and Prejudice", "Alice's Adventure in Wonderland"] {
+//     match page_count.get(book) {
+//         Some(cnt) => println!("{book} : {cnt} pages"),
+//         None => println!("{book} is unknown"),
+//     }
+// }
 
-    // let five = Box::new(5);
-    // println!("five: {}", *five);
+// let five = Box::new(5);
+// println!("five: {}", *five);
 
-    // let list: List<i32> = List::Cons(1, Box::new(List::Cons(2, Box::new(List::Nil))))
+// let list: List<i32> = List::Cons(1, Box::new(List::Cons(2, Box::new(List::Nil))))
 
-    // let list: List<i32> = List::Cons(1, Box::new(List::Cons(2, Box::new(List::Nil))));
-    // println!("{list:?}");
+// let list: List<i32> = List::Cons(1, Box::new(List::Cons(2, Box::new(List::Nil))));
+// println!("{list:?}");
 
-    // let mut a = Rc::new(10);
-    // let mut b = a.clone();
+// let mut a = Rc::new(10);
+// let mut b = a.clone();
 
-    // println!("a: {a}");
-    // println!("b: {b}");
+// println!("a: {a}");
+// println!("b: {b}");
 
-    // foo::do_something();
-    // bar::do_something();
+// foo::do_something();
+// bar::do_something();
 
-    // outer::public();
+// outer::public();
 
 // }
 
@@ -1029,7 +1024,7 @@
 //     assert_eq!(bob.weight(), 155.2);
 // }
 
-// #[test] 
+// #[test]
 // fn test_set_age() {
 //     let mut bob = User::new(String::from("Bob"),32, 155.2);
 //     assert_eq!(bob.age(), 32);
@@ -1082,7 +1077,6 @@
 /////////////////////////////////////////////////////////////////////////////
 // use std::io::{BufRead, BufReader, Read, Result, Write};
 // use std::{fmt::Display, vec};
-
 
 // trait Greet {
 //     fn say_hello(&self);
@@ -1185,106 +1179,106 @@
 
 // fn main() {
 // fn main() -> Result<()> {
-    // let pets: Vec<Box<dyn Greet>> = vec![
-    //     Box::new(Dog { name: String::from("Fido")}),
-    //     Box::new(Cat),
-    // ];
-    // for pet in pets {
-    //     pet.say_hello();
-    // }
+// let pets: Vec<Box<dyn Greet>> = vec![
+//     Box::new(Dog { name: String::from("Fido")}),
+//     Box::new(Cat),
+// ];
+// for pet in pets {
+//     pet.say_hello();
+// }
 
-    // let p1 = Player::default();
-    // let p2 = p1.clone();
+// let p1 = Player::default();
+// let p2 = p1.clone();
 
-    // println!("Is {:?}\nequal to {:?}?\nThe answer is {}!", &p1, &p2,
-    //         if p1 == p2 {"Yes"} else {"No"});
+// println!("Is {:?}\nequal to {:?}?\nThe answer is {}!", &p1, &p2,
+//         if p1 == p2 {"Yes"} else {"No"});
 
-    // let a = Centimeter(10);
-    // let b = Centimeter(20);
+// let a = Centimeter(10);
+// let b = Centimeter(20);
 
-    // println!("{a:?} equals {b:?}: {}",a.equal(&b));
-    // println!("{a:?} not_equals {b:?}: {}",a.not_equal(&b));
+// println!("{a:?} equals {b:?}: {}",a.equal(&b));
+// println!("{a:?} not_equals {b:?}: {}",a.not_equal(&b));
 
-    // let fib = Fibonacci{curr : 0, next : 1};
-    // for (i, n) in fib.enumerate().take(30) {
-    //     println!("fib({i}) : {n}");
-    // }
+// let fib = Fibonacci{curr : 0, next : 1};
+// for (i, n) in fib.enumerate().take(30) {
+//     println!("fib({i}) : {n}");
+// }
 
-    // let s = String::from("hello");
-    // let addr = std::net::IpAddr::from([127, 0, 0, 1]);
-    // let one = i16::from(true);
-    // let bigger = i32::from(123116);
+// let s = String::from("hello");
+// let addr = std::net::IpAddr::from([127, 0, 0, 1]);
+// let one = i16::from(true);
+// let bigger = i32::from(123116);
 
-    // let s: String = "hello".into();
-    // let addr: std::net::Ipv4Addr = [127, 0, 0, 1].into();
-    // let one: i16 = true.into();
-    // let bigger: i32 = 12316.into();
+// let s: String = "hello".into();
+// let addr: std::net::Ipv4Addr = [127, 0, 0, 1].into();
+// let one: i16 = true.into();
+// let bigger: i32 = 12316.into();
 
-    // println!("{s}, {addr}, {one}, {bigger}");
+// println!("{s}, {addr}, {one}, {bigger}");
 
-    // let slice: &[u8] = b"foo\nbar\nbaz\n";
-    // println!("lines in slice: {}", count_lines(slice));
+// let slice: &[u8] = b"foo\nbar\nbaz\n";
+// println!("lines in slice: {}", count_lines(slice));
 
-    // let file = std::fs::File::open(std::env::current_exe()?)?;
-    // println!("lines in file: {}", count_lines(file));
-    // Ok(())
+// let file = std::fs::File::open(std::env::current_exe()?)?;
+// println!("lines in file: {}", count_lines(file));
+// Ok(())
 
-    // let mut buffer = Vec::with_capacity(1024);
-    // log(&mut buffer, "Hello")?;
-    // log(&mut buffer, "World")?;
-    // println!("Logged: {:?}", buffer);
-    // Ok(())
+// let mut buffer = Vec::with_capacity(1024);
+// log(&mut buffer, "Hello")?;
+// log(&mut buffer, "World")?;
+// println!("Logged: {:?}", buffer);
+// Ok(())
 
-    // let p1 = Point { x: 10, y: 20 };
-    // let p2 = Point { x: 100, y: 200 };
+// let p1 = Point { x: 10, y: 20 };
+// let p2 = Point { x: 100, y: 200 };
 
-    // println!("{:?} + {:?} = {:?}",p1, p2, p1 + p2);
+// println!("{:?} + {:?} = {:?}",p1, p2, p1 + p2);
 
-    // let a = Droppable {name : "a"};
-    // {
-    //     let b = Droppable { name : "b" };
-    //     {
-    //         let c = Droppable { name : "c" };
-    //         let d = Droppable { name : "d" };
-    //         println!("Exiting block B");
-    //     }
-    //     println!("Exiting block A");
-    // }
-    // drop(a);
-    // println!("Exiting main");
+// let a = Droppable {name : "a"};
+// {
+//     let b = Droppable { name : "b" };
+//     {
+//         let c = Droppable { name : "c" };
+//         let d = Droppable { name : "d" };
+//         println!("Exiting block B");
+//     }
+//     println!("Exiting block A");
+// }
+// drop(a);
+// println!("Exiting main");
 
-    // let integer = Point {x : 5, y: 10};
-    // let float = Point {x : 1.0, y: 4.0};
+// let integer = Point {x : 5, y: 10};
+// let float = Point {x : 1.0, y: 4.0};
 
-    // println!("{integer:?} and {float:?}");
+// println!("{integer:?} and {float:?}");
 
-    // let p = Point(5, 10);
-    // println!("p.x = {}", p.x());
+// let p = Point(5, 10);
+// println!("p.x = {}", p.x());
 
-    // let foo = String::from("foo");
-    // let pair = duplicate(foo);
+// let foo = String::from("foo");
+// let pair = duplicate(foo);
 
-    // println!("{:?}",pair);
+// println!("{:?}",pair);
 
-    // let add_3 = |x| x + 3;
-    // let mul_5 = |x| x * 5;
+// let add_3 = |x| x + 3;
+// let mul_5 = |x| x * 5;
 
-    // println!("add_3 : {}", apply_with_log(add_3, 10));
-    // println!("add_3 : {}", apply_with_log(add_3, 10));
+// println!("add_3 : {}", apply_with_log(add_3, 10));
+// println!("add_3 : {}", apply_with_log(add_3, 10));
 
-    // let integer = Some(5);
-    // let float = Some(5.0);
+// let integer = Some(5);
+// let float = Some(5.0);
 
-    // print(123);
-    // print("Hello");
+// print(123);
+// print("Hello");
 
-    // let xs = vec![123, "Hello"];
-    // println!("{:?}",xs);
+// let xs = vec![123, "Hello"];
+// println!("{:?}",xs);
 
-    // let xs: Vec<Box<dyn Display>> = vec![Box::new(1234), Box::new("Hello")];
-    // for x in xs {
-    //     println!("x: {x}");
-    // }
+// let xs: Vec<Box<dyn Display>> = vec![Box::new(1234), Box::new("Hello")];
+// for x in xs {
+//     println!("x: {x}");
+// }
 
 //     println!("{:?}", numbers(-5).collect::<Vec<_>>());
 //     println!("{:?}", numbers(5).collect::<Vec<_>>());
@@ -1322,8 +1316,5 @@
 //     writer.write_all(msg.as_bytes())?;
 //     writer.write_all("\n".as_bytes())
 // }
- 
 
-fn main(){
-    
-}
+fn main() {}
